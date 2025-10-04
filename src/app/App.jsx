@@ -6,6 +6,7 @@ import 'react-phone-input-2/lib/style.css';
 import Homepage from "../../modules/client/home_page";
 import GuideRegisterPage from "../../modules/guide/guideregister";
 import ReservePlanningPage from "../../modules/client/ReservePlanning";
+import ContactPage from "../../modules/client/contact"; // <-- Add this line
 
 function MainContent() {
   const navigate = useNavigate();
@@ -26,6 +27,7 @@ export default function App() {
           <Route path="/home_page" element={<Homepage />} />
           <Route path="/guide_register" element={<GuideRegisterPage />} />
           <Route path="/reserve_planning" element={<ReservePlanningPage />} />
+          <Route path="/contact" element={<ContactPage />} /> {/* <-- Add this line */}
         </Routes>
       </div>
     </Router>

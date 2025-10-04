@@ -1,4 +1,3 @@
-import "../../src/styles.css";
 import { useNavigate } from "react-router-dom";
 
 export function Header() {
@@ -24,15 +23,35 @@ export function Header() {
   };
 
   return (
-    <header className="header">
-      <div className="header-container">
-        <div className="logo">
-          <div className="logo-icon">
+    <header
+      className="header"
+      style={{
+        padding: "30px 20px", // augmente la taille verticale
+        fontSize: "1.2rem", // texte plus grand
+        backgroundColor: "#f8f9fa" // couleur de fond douce
+      }}
+    >
+      <div
+        className="header-container"
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+          maxWidth: "1400px",
+          margin: "0 auto"
+        }}
+      >
+        <div
+          className="logo"
+          style={{ display: "flex", alignItems: "center", gap: "10px" }}
+        >
+          <div className="logo-icon" style={{ width: "50px", height: "50px" }}>
             <svg
               className="icon"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
+              style={{ width: "100%", height: "100%" }}
             >
               <path
                 strokeLinecap="round"
@@ -48,20 +67,45 @@ export function Header() {
               />
             </svg>
           </div>
-          <span className="logo-text">TourGuide</span>
+          <span style={{ fontSize: "1.8rem", fontWeight: "bold" }}>TourGuide</span>
         </div>
 
-        <nav className="nav">
-          <a href="#">Home</a>
-          <a href="#">Plannings</a>
-          <a href="#">Guides</a>
-          <a href="#">About</a>
-          <a href="#">Contact</a>
-        </nav>
-
-        <div className="actions">
+        <nav className="nav" style={{ fontSize: "1.1rem" }}>
           <a
             href="#"
+            style={{ margin: "0 15px" }}
+            onClick={(e) => {
+              e.preventDefault();
+              navigate("/home_page");
+            }}
+          >
+            Home
+          </a>
+          <a href="#" style={{ margin: "0 15px" }}>
+            Plannings
+          </a>
+          <a href="#" style={{ margin: "0 15px" }}>
+            Guides
+          </a>
+          <a href="#" style={{ margin: "0 15px" }}>
+            About
+          </a>
+          <a
+            href="#"
+            style={{ margin: "0 15px" }}
+            onClick={(e) => {
+              e.preventDefault();
+              navigate("/contact");
+            }}
+          >
+            Contact
+          </a>
+        </nav>
+
+        <div className="actions" style={{ display: "flex", gap: "15px" }}>
+          <a
+            href="#"
+            style={{ fontSize: "1.1rem" }}
             onClick={(e) => {
               e.preventDefault();
               navigate("/guide_register");
@@ -69,7 +113,19 @@ export function Header() {
           >
             Become a Guide
           </a>
-          <button className="button" onClick={handleBookTour}>
+          <button
+            className="button"
+            style={{
+              padding: "12px 25px",
+              fontSize: "1.1rem",
+              borderRadius: "8px",
+              backgroundColor: "#007bff",
+              color: "white",
+              border: "none",
+              cursor: "pointer"
+            }}
+            onClick={handleBookTour}
+          >
             Book a Tour
           </button>
         </div>
