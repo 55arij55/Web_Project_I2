@@ -12,6 +12,7 @@ import ShoppingCart from "../../modules/client/cart";
 import PaymentFormPage from "../../modules/client/payment";
 import GuideDashboardPage from "../../modules/guide/guideDashboard";
 import AddPlanningPage from "../../modules/guide/addPlanning";
+import AdminDashboardPage from "../../modules/admin/AdminDashboard";
 
 function MainContent() {
   const navigate = useNavigate();
@@ -38,6 +39,7 @@ export default function App() {
           <Route path="/paymentForm" element={<PaymentFormPage />} />
           <Route path="/guide_dashboard" element={<GuideDashboardPage />} />
           <Route path="/add_planning" element={<AddPlanningPage />} />
+          <Route path="/admin_dashboard" element={<AdminDashboardPage />} />
           <Route path="*" element={<div>404 Not Found</div>} />
         </Routes>
       </div>
